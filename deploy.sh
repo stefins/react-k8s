@@ -6,8 +6,6 @@ docker push "iamstefin/multi-client:latest"
 docker push "iamstefin/multi-server:latest"
 docker push "iamstefin/multi-worker:latest"
 
-export KUBECONFIG=$(pwd)/simplek8s-kubeconfig.yaml
-
 docker push iamstefin/multi-client:$SHA
 docker push iamstefin/multi-server:$SHA
 docker push iamstefin/multi-worker:$SHA
