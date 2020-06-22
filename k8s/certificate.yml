@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: stefinshaji-me-tls
+spec:
+  secretName: stefinshaji-me
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: stefinshaji.me
+  dnsNames:
+    - stefinshaji.me
+    - www.stefinshaji.me
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - stefinshaji.me
+          - www.stefinshaji.me
